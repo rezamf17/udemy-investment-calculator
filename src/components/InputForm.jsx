@@ -8,10 +8,10 @@ export default function InputForm() {
   const [duration, setDuration] = useState('')
 
   const formProps = {
-    initialInvestment,
-    annualInvestment,
-    expectedReturn,
-    duration
+    initialInvestment: parseInt(initialInvestment),
+    annualInvestment: parseInt(annualInvestment),
+    expectedReturn: parseInt(expectedReturn),
+    duration: parseInt(duration)
   }
 
   return (
