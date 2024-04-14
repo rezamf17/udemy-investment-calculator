@@ -6,6 +6,9 @@ export default function Table({ form }) {
   useEffect(() => {
     setResults(calculateInvestmentResults(form))
   }, [form])
+  if (results.length === 0) {
+    return <table id="result">No Data...</table>
+  }
   const initialInvestment = results[0].valueEndOfYear - results[0].interest - results[0].annualInvestment
   console.log('form log', form)
   console.log('result log', results)

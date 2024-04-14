@@ -2,10 +2,10 @@ import React, { useState } from "react"
 import Table from "./Table"
 
 export default function InputForm() {
-  const [initialInvestment, setInitialInvestment] = useState('')
-  const [annualInvestment, setAnnualInvestment] = useState('')
-  const [expectedReturn, setExpectedReturn] = useState('')
-  const [duration, setDuration] = useState('')
+  const [initialInvestment, setInitialInvestment] = useState(10000)
+  const [annualInvestment, setAnnualInvestment] = useState(1200)
+  const [expectedReturn, setExpectedReturn] = useState(6)
+  const [duration, setDuration] = useState(10)
 
   const formProps = {
     initialInvestment: parseInt(initialInvestment),
@@ -38,7 +38,8 @@ export default function InputForm() {
           </p>
         </div>
       </section>
-      <Table form={formProps} />
+      {formProps.duration <= 1 ? <table id="result">Please input correct number..</table> : <Table form={formProps} />}
+      
     </>
   )
 }
